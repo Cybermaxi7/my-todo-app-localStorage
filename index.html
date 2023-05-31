@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App with LocalStorage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,800;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Hello, <input type="text" placeholder="name here" id="name" /></h1>
+      <p class="todo-count">0 todo left</p>
+    </header>
+    <main>
+      <section class="quote">
+        <h2>Get things done</h2>
+        <p>Avoid procastination, create a <span>TODO</span></p>
+      </section>
+      <form class="todo-form">
+        <section class="input-container">
+          <h3>What's on your todo?</h3>
+          <input
+            type="text"
+            placeholder="e.g. Go to the gym by 8pm"
+            name="content"
+            class="input-content"
+          />
+        </section>
+        <section class="category">
+          <h3>Pick a category</h3>
+          <div class="options">
+            <label>
+              <input
+                type="radio"
+                name="category"
+                value="personal"
+                id="category1"
+              />
+              <span class="glow personal"></span>
+              <div>Personal</div>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="category"
+                value="business"
+                id="category2"
+              />
+              <span class="glow business"></span>
+              <div>Business</div>
+            </label>
+          </div>
+          <input type="submit" value="Add" class="submitBtn" />
+        </section>
+        <section class="new-todos">
+          <!-- <div class="todo-item">
+            <label class="input-label"
+              ><input type="radio" />
+              <ion-icon
+                name="checkmark-circle-outline"
+                class="personal"
+              ></ion-icon>
+            </label>
+            <input
+              type="text"
+              value="Read my bible"
+            
+              readonly
+            />
+            <div class="actions">
+              <button class="edit-btn">Edit</button>
+              <button class="save-btn hidden">Save</button>
+              <button class="delete-btn">Delete</button>
+            </div>
+          </div>
+          <div class="todo-item">
+            <label class="input-label"
+              ><input type="radio" />
+              <ion-icon
+                name="checkmark-circle-outline"
+                class="personal"
+              ></ion-icon>
+            </label>
+            <input type="text" value="Read my bible" readonly />
+            <div class="actions">
+              <button class="edit-btn">Edit</button>
+              <button class="save-btn hidden">Save</button>
+              <button class="delete-btn">Delete</button>
+            </div>
+          </div> -->
+        </section>
+      </form>
+    </main>
+
+    <footer>
+      <footer class="footer">
+        <h2>Agbe Moses (Cybermaxi)</h2>
+        <ul class="links">
+          <li>
+            <a href="https://github.com/Cybermaxi7" target="_blank"
+              ><ion-icon name="logo-github" class="footer__icon"></ion-icon
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/moses-agbe-b7766321b/"
+              target="_blank"
+              ><ion-icon name="logo-linkedin" class="footer__icon"></ion-icon
+            ></a>
+          </li>
+          <li>
+            <a href="https://twitter.com/Cybermaxi7" target="_blank"
+              ><ion-icon name="logo-twitter" class="footer__icon"></ion-icon
+            ></a>
+          </li>
+        </ul>
+        <p>&copy; Agbe Moses. All rights reserved.</p>
+      </footer>
+    </footer>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

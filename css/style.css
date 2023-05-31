@@ -1,0 +1,420 @@
+:root {
+  --backgroundBg: #1a1b1d;
+  --color-primary: #192a56;
+  --color-gray: #718093;
+  --color-lightGray: #fdfdfd;
+  --color-danger: #c23616;
+  --color-green: #44bd32;
+  --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.863);
+  --business-glow: 0 0 4px rgba(194, 54, 23, 0.75);
+  --personal-glow: 0 0 4px rgba(68, 189, 50, 0.75);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+input:not([type="radio"]),textarea,
+button {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: initial;
+}
+input[type="radio"] {
+  display: none;
+}
+body {
+  font-family: "Raleway", sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--backgroundBg);
+  color: var(--color-lightGray);
+  font-size: 62.5%;
+}
+
+section {
+  margin-top: 2rem;
+  padding-inline: 4rem;
+}
+h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+.quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h2 {
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  font-weight: 800;
+  margin-bottom: 5px;
+  background: -webkit-linear-gradient(left, #e90404, #3e49e7, #e9ec18);
+  -webkit-background-clip: text;
+  /* background-clip: text; */
+  -webkit-text-fill-color: transparent;
+  /* width: fit-content; */
+  
+
+}
+h3 {
+  margin-bottom: 5px;
+  color: var(--color-gray);
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 4rem;
+  align-items: center;
+  margin-block: 2rem;
+  width: 100%;
+}
+header h1 {
+  display: flex;
+  align-items: center;
+  flex: 1 1 0%;
+}
+header h1 input {
+  margin-left: 1rem;
+  font-size: 2.5rem;
+  font-family: inherit;
+  color: var(--color-lightGray);
+  font-weight: 400;
+  width: 100%;
+}
+header h1 input::placeholder {
+  font-size: 2rem;
+  font-style: italic;
+}
+header p {
+  font-size: 1.3rem;
+  font-weight: 700;
+  display: inline-flex;
+  /* flex: 1 1 0% */
+}
+main {
+  width: 100%;
+  height: auto;
+}
+main .quote {
+  width: 100%;
+  text-align: center;
+}
+
+main .quote p {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+main .quote p span {
+  color: var(--color-gray);
+  color: var(--color-green);
+}
+
+.todo-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.todo-form .input-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.todo-form .input-container input {
+  flex: 1 1 0%;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: var(--color-lightGray);
+  /* width: 70%; */
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--color-gray);
+  box-shadow: var(--box-shadow);
+}
+.todo-form .input-container input::placeholder {
+  font-weight: 400;
+}
+
+.category {
+  width: 100%;
+  /* display: flex; */
+}
+.category .options {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* width: 80%; */
+  justify-content: space-between;
+  /* padding-inline: 8rem; */
+  /* margin: 0 auto; */
+  color: var(--color-primary);
+  font-size: 1.3rem;
+  align-items: center;
+  gap: 1rem;
+}
+.category .options label {
+  background-color: var(--color-lightGray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+  transition: .2s ease-in-out;
+}
+.category .options label:hover {
+  transform: scale(1.01);
+}
+.glow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 3px solid var(--color-green);
+  box-shadow: var(--personal-glow);
+}
+.glow.business {
+  border: 3px solid var(--color-danger);
+  box-shadow: var(--business-glow);
+}
+.glow::after {
+  opacity: 0;
+  content: "";
+  display: block;
+  width: 0px;
+  height: 0px;
+  background-color: var(--color-green);
+  border-radius: 50%;
+  transition: 0.2s ease-in-out;
+  box-shadow: var(--personal-glow);
+}
+.glow.business::after {
+  background-color: var(--color-danger);
+  box-shadow: var(--business-glow);
+}
+
+.options label input[type="radio"]:checked ~ .glow::after {
+  opacity: 1;
+  width: 15px;
+  height: 15px;
+}
+
+.category input[type="submit"] {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 5px;
+  background-color: var(--color-green);
+  transition: 0.2s ease-in-out;
+  font-size: 1.3rem;
+  font-family: inherit;
+  font-weight: 700;
+  color: var(--backgroundBg);
+}
+
+.category input[type="submit"]:hover {
+  opacity: 0.8;
+}
+
+.new-todos {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+.new-todos .todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-lightGray);
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 2rem;
+}
+ion-icon {
+  font-size: 3rem;
+  cursor: pointer;
+}
+.todo-item .business {
+  color: var(--color-danger);
+}
+.todo-item .personal {
+  color: var(--color-green);
+}
+.todo-item textarea {
+  width: 100%;
+  margin-left: 1rem;
+  font-size: 1.3rem;
+  color: var(--backgroundBg);
+  font-family: inherit;
+  font-weight: 700;
+}
+.todo-item textarea.editable {
+  background: #f0e0e0;
+  padding: 1rem;
+}
+.new-todos .todo-item.done {
+  background-color: #353b48;
+}
+.done textarea {
+  color: var(--color-lightGray);
+  text-decoration: line-through;
+}
+.new-todos .actions {
+  display: flex;
+
+  font-size: 1.3rem;
+  gap: 1rem;
+  align-items: center;
+}
+
+button {
+  padding: 1rem;
+  font-family: inherit;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  color: var(--color-lightGray);
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+button:hover {
+  opacity: 0.7;
+}
+.hidden {
+  display: none;
+}
+.actions .edit-btn {
+  background-color: var(--color-green);
+}
+.actions .save-btn {
+  background-color: var(--color-primary);
+}
+.actions .delete-btn {
+  background-color: var(--color-danger);
+}
+.footer {
+  padding-inline: 4rem;
+  margin-top: 1rem;
+}
+.footer h2 {
+  text-align: center;
+}
+
+.footer .links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  margin-block: 2rem;
+}
+.footer .links li a {
+  text-decoration: none;
+  color: var(--color-lightGray);
+}
+.footer p {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+
+/* MEDIA QUERY */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 50%;
+  }
+  .todo-form .input-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .todo-form .input-container input {
+    width: 100%;
+  }
+  section,
+  header {
+    padding-inline: 1rem;
+  }
+  header h1 {
+    font-size: 1.4rem;
+  }
+  header h1 input::placeholder {
+    font-size: 1.4rem;
+  }
+  header h1 input {
+    margin-left: 0.5rem;
+    font-size: 1.4rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  main .quote p {
+    font-size: 1.1rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+  .todo-form .input-container input {
+    font-size: 1rem;
+    padding: 0.7rem;
+  }
+  .category .options {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+  .category .options label {
+    padding: 1rem;
+  }
+  .category input[type="submit"] {
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+  .new-todos .todo-item {
+    padding: 0.4rem;
+    padding-bottom: 1rem;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: .5rem;
+  }
+  ion-icon {
+    font-size: 2rem;
+  }
+  .todo-item textarea {
+    font-size: 1rem;
+    margin-left: 0;
+    text-align: center;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: flex-start; */
+    /* flex-wrap: wrap; */
+  }
+  .todo-item input.editable {
+    padding: .5rem;
+  }
+  .new-todos .actions {
+    gap: .5rem;
+  }
+  button{
+    padding: .6rem;
+    font-size: .9rem;
+  }
+  .footer {
+    padding-inline: 1rem;
+  }
+
+}
